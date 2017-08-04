@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0af28dbe-063c-4d14-9709-14528eb92b56">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="197"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="pEquipo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select *
+from equipos, mantenimientos
+where equipos.NControl = mantenimientos.Equipo
+and equipos.NControl = $P{pEquipo}]]>
+	</queryString>
+	<field name="NControl" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Marca" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Modelo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Accesorios" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Area" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Comodato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Estatus" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="IDMantenimiento" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Equipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Mantenimiento" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="62ab596e-879b-4a9d-8721-fd181ecd12a4"/>
+				<staticText>
+					<reportElement x="20" y="20" width="454" height="43" forecolor="#FFFFFF" uuid="e1d4a982-7d17-40e9-9aa6-bb36cf42d8dc"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Hospital Ángeles Tampico]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="185" y="72" width="390" height="20" forecolor="#FFFFFF" uuid="9b68ea2e-93e9-4ac2-abcc-ccd66ef6ca78"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cédula de Mantenimiento Preventivo ]]></text>
+				</staticText>
+				<image>
+					<reportElement x="498" y="9" width="87" height="54" uuid="7cfd9de5-d466-42cf-b349-b916870486af"/>
+					<imageExpression><![CDATA["src/hospital/Imagenes/LogoAngeles.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="65">
+			<rectangle>
+				<reportElement x="370" y="28" width="185" height="32" uuid="78c6ff4e-9081-4899-9fb7-e575ac990a0c"/>
+			</rectangle>
+			<textField pattern="dd/MM/yy">
+				<reportElement x="456" y="28" width="89" height="21" uuid="1e0246d7-ca66-4673-9ae1-19fa9e4506f2"/>
+				<textElement textAlignment="Right">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="393" y="28" width="52" height="20" uuid="994b42d0-3987-48bb-8c47-ed52c0a93db0"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="175">
+			<staticText>
+				<reportElement x="5" y="20" width="86" height="20" uuid="98b9e52e-1ea0-4cae-b88c-5c7271af2364"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Equipo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="40" width="86" height="20" uuid="eaedd4f7-e1a9-41c4-be99-725de40862b5"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marca:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="60" width="86" height="20" uuid="0fe8e0b2-bb08-4e8e-a451-38c5aa696cde"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modelo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="80" width="86" height="20" uuid="9f47c0d0-2b03-40bf-b55f-cd0c8be24059"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° de Serie:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="107" y="0" width="178" height="20" uuid="c84b5a9c-2121-4bc0-9cba-083c500012fb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Equipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-226" y="60" width="169" height="20" uuid="52b719a1-e26b-4ae1-8da3-8e39738c60e6"/>
+				<textFieldExpression><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="80" width="181" height="20" uuid="44950357-03dd-4ea4-865a-f06be9a04aaf"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="20" width="178" height="20" uuid="ead831e3-7602-43bf-b50a-20d150581c8a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="40" width="181" height="20" uuid="95bb7b35-6ee3-4da4-a5e5-a3a6e3ddcc77"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="60" width="181" height="20" uuid="fbbca0bd-c1d5-4789-9728-073719018f8e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Modelo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="0" width="86" height="20" uuid="eeed0c61-20c8-4b7a-81e1-19b76293d17a"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° de Control:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="92">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="186" y="4" width="171" height="1" uuid="b3dcce78-5844-4a57-a122-ac7bce4e3ac8"/>
+			</line>
+			<staticText>
+				<reportElement x="186" y="5" width="171" height="20" uuid="b586f980-ccd2-4cb3-9259-c13c0307cb38"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Ing. Victor Hugo Hernández Hernández]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="23" width="249" height="20" uuid="34ef6533-c401-4f45-970f-351e0f1c96b2"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Jefe del Departamento de Ingeniería Biomédica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="55" width="555" height="25" uuid="25e5e4a9-078b-4db9-b4c6-5925048e0b9d"/>
+				<textElement textAlignment="Justified">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Este informe es generado automáticamente a partir de una transacción realizada en el sistema.
+Por lo que se recomienda revisar que la información que se encuentra dentro de este documento antes de ser usada de soporte de manera oficial.
+Este documento no tiene validez oficial fuera de la jurisdicción del Departamento de Ingeniería Biomédica del Hospital Ángeles Tampico.]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="-20" y="91" width="595" height="1" uuid="9c1793f7-8d4f-4913-b6e7-a0b5efa04e2f"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="29"/>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
